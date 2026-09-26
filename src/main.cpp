@@ -90,6 +90,10 @@ void opcontrol() {
 
         // If a valid character is read and it's not EOF (End of File)
         if (c != EOF) {
+            if (c == '\r') {
+                continue;
+            }
+
             // Check for newline character which indicates end of message
             if (c == '\n' || index >= sizeof(buffer) - 1) {
                 buffer[index] = '\0'; // Null-terminate the string
